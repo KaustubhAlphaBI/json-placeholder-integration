@@ -19,7 +19,11 @@ export default function Home() {
 	}, [fetchUserBasedOnQueryParam, queryParam]);
 
 	if (loading) {
-		return <Loading />;
+		return (
+			<main className='flex min-h-screen flex-col items-center justify-center p-4 md:p-16 lg:p-24 w-full'>
+				<Loading />
+			</main>
+		);
 	}
 
 	return (
