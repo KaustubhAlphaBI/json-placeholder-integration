@@ -20,7 +20,6 @@ export default function Home() {
 				const response = await axios.get('/users', {
 					params: { q: queryParam },
 				});
-				throw new Error('wrong');
 
 				setUser(response.data);
 			} catch (err) {
