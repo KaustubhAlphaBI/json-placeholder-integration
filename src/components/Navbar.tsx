@@ -1,13 +1,13 @@
 'use client';
 
 import { useSearchContext } from '@/context/searchContext';
-import { ChangeEventHandler, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useDebounce } from 'use-debounce';
 
 export default function Navbar() {
 	const setQueryParam = useSearchContext((d) => d.setQuery);
 	const [query, setQuery] = useState('');
-	const [value] = useDebounce(query, 1000);
+	const [value] = useDebounce(query, 500);
 
 	useEffect(() => {
 		setQueryParam(value);
